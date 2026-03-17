@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 
-const POSTS_DIR = path.join(process.cwd(), 'content/posts');
+const POSTS_DIR = path.join(process.cwd(), 'src/content/posts');
 
 export interface PostMeta {
   title: string;
