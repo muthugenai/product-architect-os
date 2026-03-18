@@ -10,6 +10,10 @@ export function generateStaticParams() {
   return getPosts().map((post) => ({ slug: post.slug }));
 }
 
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function renderMarkdown(content: string) {
   const lines = content.split("\n");
 
@@ -65,7 +69,10 @@ export default async function WritingPostPage({ params }: PageProps) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
-  const contentWithoutTitle = post.content.replace(/^#\s+.*\n?/, "").trim();
+  const contentWithoutTitle = post.content
+    .replace(/^#\s+.*\n?/, "")
+    .replace(new RegExp(`^By\\s+${escapeRegExp(post.author)}\\s*\\n?`, "i"), "")
+    .trim();
 
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-100">

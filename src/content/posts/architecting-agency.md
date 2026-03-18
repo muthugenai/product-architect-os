@@ -1,55 +1,81 @@
 ---
-title: "Design Tech Laboratory: Experimenting with My Product Builder OS"
+title: "In Pursuit of Design Tech Agency: Tinkering with the Prompt-to-Production Loop"
 date: "2026-03-18"
-excerpt: "A design leader's journey back to building—and why hands-on experimentation matters more than ever."
+excerpt: "Exploring the prompt-to-production loop through practical experiments in Cursor, GitHub, and Vercel."
 author: "Muthukumar Rajamani"
 status: "Published"
 tags:
   - design-tech
-  - product-building
+  - ai-builder
+  - vibe-coding
+  - ci-cd
+  - prompt-to-production
+  - build-in-public
   - design-leadership
-  - AI-native
-  - learning-in-public
+  - super-ic
+  - ux-engineering
+  - cursor-ai
+  - vercel
 ---
 
-# Design Tech Laboratory: Experimenting with My Product Builder OS
+# In Pursuit of Design Tech Agency: Tinkering with the Prompt-to-Production Loop
 
-Leadership can no longer live only in design tools or slide decks. To lead teams effectively today, we need what I think of as Design Tech Agency—the ability to move from vision to build, not just critique.
+## TL;DR
 
-As a design leader, I realized that to truly shape the future of AI-driven experiences, I needed to become a product builder again. This site—my Product Architect OS—is the outcome of that shift. It isn't just a blog; it's a place where I share what I'm learning as my role evolves from design leader to product builder.
+- Design and code are converging into a prompt-to-prototype-to-production loop.
+- Design Tech Agency means moving from vision-sharing to hands-on building.
+- The "Golden Stack" being tested is Cursor + GitHub + Vercel.
+- The operating loop is simple: prompt and iterate, commit safely, deploy instantly.
+- Working this way reduces handoff friction and replaces static specs with live URLs.
 
-## The Sprint: From Zero to Vercel
+The boundary between designing an interface and coding it is rapidly dissolving. The currently evolving scenario in product design is a continuous, AI-driven loop: from prompt, to prototype, to production. Navigating this shift requires more than just adopting new design systems - it requires Design Tech Agency: the ability to move from simply sharing a vision to actively building it.
 
-Over the last few days, I've woven hands-on product building back into my daily practice. Here's how I've grounded my design tech foundation and the stack that supports it.
+To truly understand the future of AI-driven experiences, one approach is to step back into the sandbox and tinker. This site - the Product Architect OS - is a living laboratory dedicated to learning AI builder skills alongside design leadership.
 
-### The IDE as an Operating System
+Here are the baby steps being taken in that direction, the tools being tested, and the lessons learned out loud.
 
-I've moved my entire workflow into Cursor. I treat it not just as a code editor, but as an AI-native partner for "Vibe Coding." By leveraging indexed documentation, I've turned the IDE into a collaborative space where natural language turns into production-ready components.
+## The "Golden Stack" Experiment: Closing the Handoff Gap
 
-### Version Control as a Source of Truth
+Testing a new workflow has revealed a realistic path from static designs to functional, live web apps. If the design canvas is where we map the territory, this stack is where we actually build the roads.
 
-I re-established my connection with GitHub, working through initial setup hurdles to build a solid, professional-grade repository. I've also put together a README.md that acts as the blueprint for this entire system.
+### 1. Cursor: The AI-Native Pair Programmer
 
-### Production-Grade Deployment
+Cursor is a code editor, but with deep AI context baked in.
 
-I connected the dots to Vercel, automating the pipeline so that every design-led prototype is live and testable within about 60 seconds of a git push. Removing the friction between "local host" and "live URL" has become one of the biggest multipliers for my velocity as a builder.
+The Designer's Edge: It goes beyond just pasting a screenshot of a mockup. By feeding it your design tokens and components, you can ask it to generate responsive layouts that match your system perfectly.
 
-## The "Super IC" Philosophy: Why Now?
+The Vibe: It feels less like writing syntax and more like vibe coding and prompting architecture. It's a sandbox for designers who understand UX logic and want to experiment at 10x speed.
 
-The Design Technologist is no longer a niche role—it's the evolution of the craft. I'm experimenting with that shift and leaning into the idea of the Super IC: a leader who uses AI to deliver outsized impact through high-agency execution.
+### 2. GitHub: Fearless Experimentation
 
-### Documenting the Build
+The Designer's Edge: Instead of just a backup drive, it's a space for parallel realities. Creating a "branch" means you can test a radical new interaction pattern safely. If the experiment fails, delete the branch. If it works, merge it.
 
-This OS doubles as a laboratory for my AI-native concepts and prototypes. It's where I break things so I can learn how to fix them—and share those lessons with my team.
+The Vibe: It provides the psychological safety to break things and a secure handoff point when things work.
 
-### Mentorship through Discovery
+### 3. Vercel: The Instant Feedback Loop
 
-By experimenting with and learning the materials—Next.js 15, Tailwind, and modern APIs—I'm better equipped to mentor the developers and designers I lead. You can't guide a ship if you don't understand the currents.
+The Designer's Edge: Vercel automates the entire Continuous Integration and Continuous Deployment (CI/CD) pipeline. Through "Preview Deployments," every update generates a unique, shareable link automatically. You aren't sending stakeholders a prototype that fakes the interaction; you are sending them the actual code to test.
 
-### Resilience in an Uncertain World
+The Vibe: Save in Cursor -> Push to GitHub -> Vercel rebuilds the live site in seconds.
 
-In an ever-changing landscape, the ability to build is a form of professional resilience. When you own the stack, you own the output.
+## The Building Loop
 
-## The Design Tech Lab is Open
+One of the workflows currently being experimented with looks like this:
 
-This laboratory is now live. I'll be sharing my experiments here, along with the specific AI-native patterns I'm seeing in the design space. I hope it sparks your own experiments and conversations.
+- Prompt & Iterate: Use AI in Cursor to turn UI logic into responsive components.
+- Commit: Secure progress and manage experimental branches in GitHub.
+- Deploy: Ship to Vercel to test live on the web.
+
+Learning: Exploring this loop changes the nature of the "Last Mile." Instead of throwing a PDF of specs over the wall, the experiment is about sharing a live, interactive URL.
+
+## Exploring the "Super IC" Philosophy
+
+The role of the Design Technologist is evolving, opening the door to the concept of the Super IC (Individual Contributor): a leader who leverages AI to deliver impact through hands-on execution.
+
+Mentorship through Discovery: By getting hands-on with these frameworks and understanding how they interact, there is a tangible opportunity to become a better partner and mentor to both design and development teams.
+
+## The Lab is Open
+
+Welcome to the product builder and design tech lab - a place to break things, share AI-native patterns, and learn together. Let the experiments begin.
+
+What are you learning to build right now?

@@ -18,19 +18,20 @@ export interface Post extends PostMeta {
 }
 
 function parseFrontmatter(raw: string) {
-  const match = raw.match(/^---\n([\s\S]*?)\n---/);
+  const normalized = raw.replace(/^\uFEFF/, "");
+  const match = normalized.match(/^---\s*\r?\n([\s\S]*?)\r?\n---\s*(?:\r?\n|$)/);
   const frontmatter = match?.[1] ?? "";
-  const content = raw.replace(/^---\n[\s\S]*?\n---\n?/, "");
+  const content = normalized.replace(/^---\s*\r?\n[\s\S]*?\r?\n---\s*(?:\r?\n|$)/, "");
 
   const getField = (field: string) => {
-    const regex = new RegExp(`^${field}:\\s*["']?(.*?)["']?$`, "m");
+    const regex = new RegExp(`^${field}:\\s*["']?(.*?)["']?\\s*$`, "m");
     return frontmatter.match(regex)?.[1]?.trim() ?? "";
   };
 
   const getTags = (): string[] => {
-    const tagsMatch = frontmatter.match(/^tags:\s*\n((?:\s+-\s+.*\n?)*)/m);
+    const tagsMatch = frontmatter.match(/^tags:\s*\r?\n((?:\s*-\s+.*(?:\r?\n|$))*)/m);
     if (!tagsMatch) return [];
-    return (tagsMatch[1]?.match(/-\s+(.+)/g) ?? []).map((t) => t.replace(/^-\s+/, "").trim());
+    return (tagsMatch[1]?.match(/-\s+.+/g) ?? []).map((t) => t.replace(/^\s*-\s+/, "").trim());
   };
 
   return {
