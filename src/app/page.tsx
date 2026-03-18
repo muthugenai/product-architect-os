@@ -14,9 +14,8 @@ export default function Home() {
             Architecting at the Intersection of Design &amp; AI.
           </h1>
           <p className="relative mt-5 max-w-3xl text-sm leading-relaxed text-zinc-300 md:text-base">
-            I am a Design Leader and Product Builder evolving my leadership through technical
-            agency. This OS is my laboratory for shipping production-grade prototypes and
-            documenting the rise of the Design Technologist.
+            I am a Design Leader &amp; Product Builder, sharing design tech experiments and
+            documenting my learning as my role evolves from design leader to product builder.
           </p>
         </section>
 
