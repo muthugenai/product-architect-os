@@ -1,60 +1,43 @@
-# ⚡️ PRODUCT ARCHITECT OS
-> **The Super IC Framework: Strategy. Design. Code.**
+# Product Architect OS
 
-![Status](https://img.shields.io/badge/Status-Day_01_Build-blueviolet?style=for-the-badge)
-![Role](https://img.shields.io/badge/Role-Strategic_Product_Builder-black?style=for-the-badge)
+**Strategy. Design. Code.**
 
-## 🎯 THE MISSION
-To bridge the gap between high-level product strategy and production-ready execution. This repository is a living laboratory for the **Super IC** model—leveraging AI-native workflows (Cursor + Claude 4.6) to move from intent to reality at terminal velocity.
+Product Architect OS is a high-performance portfolio and blog foundation for design technologists who ship at the intersection of product strategy and engineering execution.
 
----
+## Philosophy
 
-## 🏗 THE "SUPER IC" STACK
-A precision-engineered toolkit for the modern Design Technologist.
+- Build with intent, not noise.
+- Treat design as an executable system.
+- Favor clarity, speed, and maintainability.
+- Ship outcomes over artifacts.
 
-* **Strategic Intent:** [Atlassian Rovo](https://www.atlassian.com/software/rovo) — Orchestrating context and product goals.
-* **Reasoning Engine:** **Claude 4.6 Opus** — Deep-logic mapping and architectural system design.
-* **Tactical Execution:** **Cursor + Claude 4.6 Sonnet** — High-speed "Vibe Coding" and UI implementation.
-* **Fabric:** Next.js 15 (App Router), TypeScript, and Tailwind CSS.
+## Stack
 
----
+- Next.js 15 (App Router)
+- TypeScript
+- Tailwind CSS
+- ESLint
 
-## 🏁 30-DAY DEPLOYMENT ROADMAP
-Dismantling the handoff myth through intentional building.
+## Project Structure
 
-### 📡 PHASE 01: FOUNDATIONS (Current)
-- [x] **Environment Sync:** Cursor + GitHub + Claude 4.6 Integration.
-- [x] **Manifesto:** Initializing the Product Architect OS.
-- [ ] **The Scaffold:** Deploying the core Next.js 15 engine & Design System.
+- `src/app` - App Router pages, layouts, and global styles
+- `src/components/ui` - Reusable UI primitives
+- `src/lib` - Shared utilities and domain logic
+- `content/posts` - Markdown/MDX blog content
 
-### 🎨 PHASE 02: INTERFACE & EXPERIENCE
-- [ ] **Design System:** Implementing an ultra-minimalist, dark-mode-first UI.
-- [ ] **Micro-Interactions:** Crafting intentional motion with Framer Motion.
-- [ ] **Content Engine:** Architecting a high-performance MDX-based blog.
+## Getting Started
 
-### ⚙️ PHASE 03: LOGIC & LEVERAGE
-- [ ] **Deployment Pipeline:** Vercel Edge integration.
-- [ ] **AI Agents:** Custom Atlassian Rovo agents for automated documentation.
-
-### 📈 PHASE 04: SCALE & NARRATIVE
-- [ ] **Leadership Narrative:** Publishing the "Super IC" series on LinkedIn.
-- [ ] **System Audit:** Final refactor and open-source documentation.
-
----
-
-## 🚀 QUICK START
 ```bash
 npm install
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) — dark-mode-first, ready to build.
 
----
+Open [http://localhost:3000](http://localhost:3000).
 
-## 🧠 STRATEGIC PHILOSOPHY
-> "Design is no longer a static deliverable. It is an executable file."
+## Production Check
 
-As a **Design Technologist**, I believe the future belongs to leaders who stay technical. By leveraging AI-native tools, we reduce R&D friction and move from **Vision to Value** with unprecedented speed.
+```bash
+npm run build
+```
 
----
-*Built with ⚡️ by a Strategic Product Builder.*
+If build passes locally, you are ready to push and deploy to Vercel.

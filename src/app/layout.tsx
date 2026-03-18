@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import '../styles/globals.css';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Product Architect OS',
-  description: 'Strategic Product Builder — Strategy. Design. Code.',
+  description: 'Strategy. Design. Code.',
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="min-h-screen bg-background text-foreground antialiased">
+      <body className="min-h-screen bg-black text-zinc-50 antialiased">
         {children}
       </body>
     </html>
