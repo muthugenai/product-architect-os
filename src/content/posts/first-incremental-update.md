@@ -1,7 +1,7 @@
 ---
-title: "My First AI-Powered App Update: A Lesson in Incremental Progress"
+title: "My First Minor Update: From Prompt to Prototype to Production"
 date: "2026-03-19"
-excerpt: "A factual walkthrough of a small change—adding a portfolio page and a nav link—using Cursor, GitHub, and Vercel."
+excerpt: "A minor change on this site—portfolio page, nav link—and one full pass from prompt in Cursor to production on Vercel."
 author: "Muthukumar Rajamani"
 status: "Published"
 tags:
@@ -10,28 +10,87 @@ tags:
   - vercel
   - incremental-delivery
   - build-in-public
+  - prompt-to-production
 ---
 
-# My First AI-Powered App Update: A Lesson in Incremental Progress
+# My First Minor Update: From Prompt to Prototype to Production
 
-I made a small update to this site: a simple `/portfolio` page and a **Portfolio** link in the global nav, using **Cursor**, **GitHub**, and **Vercel**. The point of this post is the workflow, not the size of the change.
+## TL;DR
+
+- Shipped a **minor update** on this site: a **`/portfolio`** page (responsive grid) and a **Portfolio** link in the header next to Writing and Prototypes.
+- Used [Cursor](https://cursor.com) with a structured prompt to generate and adjust the [Next.js](https://nextjs.org/) App Router files.
+- Ran the full **Git + [GitHub](https://github.com) + [Vercel](https://vercel.com)** loop on a feature branch: **commit → push → PR → preview URL → merge to `main` → production deploy**.
+- I was practicing **prompt → prototype → production** on something small—not shipping a large feature.
+
+## Prompt → prototype → production
+
+How I’m using those three words for this update:
+
+- **Prompt:** Describing the change in [Cursor](https://cursor.com) and iterating with the model on the implementation.
+- **Prototype:** Working code in my repo—a **`/portfolio`** page and a **Portfolio** link in the global nav—committed on a branch.
+- **Production:** **Push → PR → [Vercel](https://vercel.com) preview → merge to `main`**, so [GitHub](https://github.com) and Vercel reflect the update on the live site. My project is already [wired to Git](https://vercel.com/docs/git) with **production on `main`**.
 
 ## Local vs remote
 
-- **Local:** full repo on your machine (including `.git` history).
-- **Remote (GitHub):** the shared copy; Vercel builds from it.
-- **Push** sends commits to GitHub; **pull** brings remote changes down. Keeping them aligned is how preview and production deploys stay predictable.
+![Simple diagram: LOCAL / LAPTOP (main) — GitHub — REMOTE / CLOUD (origin).](/images/git-local-remote-main.svg)
 
-## What I did (short version)
+- **Local:** the full repo on my machine (including `.git` history).
+- **Remote ([GitHub](https://github.com)):** the shared copy; [Vercel](https://vercel.com) builds from it.
+- **`origin`:** the default remote name (`git push` goes there).
+- **`main`:** where I merge for production; I used a separate branch until the PR was ready.
+- **Push / pull** keep the two sides aligned so previews and production deploys stay predictable.
 
-1. **Branch:** `git checkout -b add-portfolio-nav` so work stays off `main` until it is reviewed.
+## What I did
+
+1. **Branch:** `git checkout -b add-portfolio-nav` so work stayed off `main` until review.
 2. **Change:** In Cursor, added `src/app/portfolio/page.tsx` (grid layout) and a `Portfolio` `Link` in `layout.tsx` next to Writing and Prototypes, matching their classes.
-3. **Commit:** Staged the files, message like `feat: add portfolio page and nav link`.
-4. **Push:** Published the branch to GitHub.
-5. **Pull request:** Opened a PR on GitHub with a one-line description.
-6. **Check preview:** Vercel created a preview URL on the PR; I opened it and confirmed the new page and nav.
+3. **Commit:** Staged those files with a message like `feat: add portfolio page and nav link`.
+4. **Push:** `git push -u origin add-portfolio-nav` the first time on that branch.
+5. **Pull request:** Opened a PR into `main` on GitHub with a short description.
+6. **Preview:** Opened the Vercel preview URL on the PR and confirmed the page and nav matched what I saw on localhost.
 7. **Merge:** Merged to `main`; production redeployed from the default branch.
+
+Roughly the commands between branch and push:
+
+```bash
+git checkout main
+git pull origin main
+git checkout -b add-portfolio-nav
+# … edits in Cursor …
+git add src/app/portfolio/page.tsx src/app/layout.tsx
+git commit -m "feat: add portfolio page and nav link"
+git push -u origin add-portfolio-nav
+```
+
+## Prompt I used (for context)
+
+```text
+Add a Next.js App Router page at route /portfolio with a responsive grid:
+1 column on mobile, 3 columns on desktop (Tailwind). Each card: title, image placeholder, and a "View" button (Link).
+Add a "Portfolio" link in the global header nav in src/app/layout.tsx next to the existing Writing and Prototypes links, using the same Link styling as those links.
+```
+
+After the model applied changes, I ran `npm run dev`, checked `http://localhost:3000/portfolio` and the new nav link, skimmed the diff, then committed.
 
 ## Takeaway
 
-Incremental updates are enough to exercise the full loop: branch, edit, commit, push, PR, preview, merge. The AI in Cursor handled boilerplate and refactors; Git and Vercel handled history and deploys. I still chose what to build and verified the preview before merging.
+- A small change was enough to run the full loop: **branch → edit → commit → push → PR → preview → merge**.
+- [Cursor](https://cursor.com) sped up the implementation; I still set the intent, reviewed the diff, and verified localhost and the [Vercel](https://vercel.com) preview before merging.
+- [GitHub](https://github.com) holds history and the PR; [Vercel](https://vercel.com) runs [preview](https://vercel.com/docs/deployments/preview-deployments) and production off that repo.
+- This site is [Next.js](https://nextjs.org/docs) (App Router); source lives at [product-architect-os](https://github.com/muthugenai/product-architect-os).
+
+## LinkedIn intro (copy & paste)
+
+Use this above your link when you share the post. Swap in **your production URL** (same path: `/writing/first-incremental-update`).
+
+```text
+I've been documenting my shift toward building in public—less deck, more working URL.
+
+Latest step: I ran one full prompt → prototype → production loop on my own site: a small portfolio page + nav link, using Cursor, GitHub, and Vercel. I kept the change minor on purpose—the point was to practice the pipeline end to end, not to ship a big feature.
+
+Short write-up with the diagram, the prompt I used, and what I merged:
+
+YOUR_PRODUCTION_URL/writing/first-incremental-update
+
+If you're on a similar path (design / product → AI-assisted builder), I'd love to hear what's working for you.
+```

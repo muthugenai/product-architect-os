@@ -32,7 +32,7 @@ The boundary between designing an interface and coding it is rapidly dissolving.
 
 To truly understand the future of AI-driven experiences, one approach is to step back into the sandbox and tinker. This site - the Product Architect OS - is a living laboratory dedicated to learning AI builder skills alongside design leadership.
 
-Here are the baby steps being taken in that direction, the tools being tested, and the lessons learned out loud.
+Here are the small moves in that direction, the tools being tested, and the lessons learned out loud.
 
 ## The "Golden Stack" Experiment: Closing the Handoff Gap
 
