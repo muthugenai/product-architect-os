@@ -41,6 +41,12 @@ export default function RootLayout({
                   Writing
                 </Link>
                 <Link
+                  href="/portfolio"
+                  className="border-b border-transparent transition-all hover:border-zinc-400 hover:text-zinc-100"
+                >
+                  Portfolio
+                </Link>
+                <Link
                   href="/prototypes"
                   className="border-b border-transparent transition-all hover:border-zinc-400 hover:text-zinc-100"
                 >
