@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
 import Link from 'next/link';
+import { SiteHeader } from '@/components/site-header';
 import './globals.css';
 
 const geistSans = Geist({ subsets: ['latin'] });
@@ -25,42 +26,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`${geistSans.className} min-h-screen bg-black text-zinc-50 antialiased`}>
         <div className="flex min-h-screen flex-col">
-          <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/90 backdrop-blur">
-            <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
-              <Link
-                href="/"
-                className="text-base font-semibold tracking-tight text-zinc-100 transition-opacity hover:opacity-80 md:text-lg"
-              >
-                Muthukumar Rajamani
-              </Link>
-              <nav aria-label="Global" className="flex items-center gap-5 text-sm text-zinc-300">
-                <Link
-                  href="/writing"
-                  className="border-b border-transparent transition-all hover:border-zinc-400 hover:text-zinc-100"
-                >
-                  Writing
-                </Link>
-                <Link
-                  href="/portfolio"
-                  className="border-b border-transparent transition-all hover:border-zinc-400 hover:text-zinc-100"
-                >
-                  Portfolio
-                </Link>
-                <Link
-                  href="/prototypes"
-                  className="border-b border-transparent transition-all hover:border-zinc-400 hover:text-zinc-100"
-                >
-                  Prototypes
-                </Link>
-                <Link
-                  href="/about"
-                  className="border-b border-transparent transition-all hover:border-zinc-400 hover:text-zinc-100"
-                >
-                  About
-                </Link>
-              </nav>
-            </div>
-          </header>
+          <SiteHeader />
           <main className="flex-1">{children}</main>
           <footer id="about" className="border-t border-zinc-800 bg-zinc-950/80">
             <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-sm text-zinc-400 md:flex-row md:items-center md:justify-between md:px-10">
