@@ -1,10 +1,21 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { Post, PostMeta } from "@/lib/post-types";
-
-export type { Post, PostMeta } from "@/lib/post-types";
 
 const POSTS_DIR = path.join(process.cwd(), "src/content/posts");
+
+export interface PostMeta {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  author: string;
+  status: string;
+  tags?: string[];
+}
+
+export interface Post extends PostMeta {
+  content: string;
+}
 
 function parseFrontmatter(raw: string) {
   const normalized = raw.replace(/^\uFEFF/, "");
