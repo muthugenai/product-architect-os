@@ -15,31 +15,53 @@ function escapeRegExp(value: string) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-/** Inline [label](url) for external docs and product links without a full markdown parser. */
+/** Inline markdown: bold, inline code, and links. */
 function renderInline(text: string): ReactNode[] {
-  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const TOKEN =
+    /(\*\*(.+?)\*\*)|(`([^`]+?)`)|(\[([^\]]+)\]\(([^)]+)\))/g;
   const out: ReactNode[] = [];
   let last = 0;
-  let m: RegExpExecArray | null;
   let kid = 0;
-  while ((m = re.exec(text)) !== null) {
+  let m: RegExpExecArray | null;
+
+  while ((m = TOKEN.exec(text)) !== null) {
     if (m.index > last) {
       out.push(<span key={`t-${kid++}`}>{text.slice(last, m.index)}</span>);
     }
-    const href = m[2];
-    const external = href.startsWith("http://") || href.startsWith("https://");
-    out.push(
-      <a
-        key={`a-${kid++}`}
-        href={href}
-        className="border-b border-zinc-600 text-zinc-100 transition-colors hover:border-zinc-400"
-        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      >
-        {m[1]}
-      </a>,
-    );
+
+    if (m[1]) {
+      out.push(
+        <strong key={`b-${kid++}`} className="font-semibold text-zinc-100">
+          {m[2]}
+        </strong>,
+      );
+    } else if (m[3]) {
+      out.push(
+        <code
+          key={`c-${kid++}`}
+          className="rounded bg-zinc-800 px-1.5 py-0.5 text-[13px] text-zinc-200"
+        >
+          {m[4]}
+        </code>,
+      );
+    } else if (m[5]) {
+      const href = m[7]!;
+      const external = href.startsWith("http://") || href.startsWith("https://");
+      out.push(
+        <a
+          key={`a-${kid++}`}
+          href={href}
+          className="border-b border-zinc-600 text-zinc-100 transition-colors hover:border-zinc-400"
+          {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        >
+          {m[6]}
+        </a>,
+      );
+    }
+
     last = m.index + m[0].length;
   }
+
   if (last < text.length) {
     out.push(<span key={`t-${kid++}`}>{text.slice(last)}</span>);
   }
@@ -115,10 +137,16 @@ function renderMarkdown(content: string) {
       continue;
     }
 
-    if (trimmed.startsWith("- ")) {
+    if (/^\s*- /.test(line)) {
+      const indent = line.search(/\S/);
+      const content = trimmed.replace(/^- /, "");
       out.push(
-        <p key={key()} className="pl-2 text-base leading-relaxed text-zinc-300">
-          • {renderInline(trimmed.replace(/^- /, ""))}
+        <p
+          key={key()}
+          className="text-base leading-relaxed text-zinc-300"
+          style={{ paddingLeft: indent > 0 ? `${indent * 0.5 + 0.5}rem` : "0.5rem" }}
+        >
+          • {renderInline(content)}
         </p>,
       );
       i++;
