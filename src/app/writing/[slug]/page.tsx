@@ -56,7 +56,7 @@ function renderMarkdown(content: string) {
   let i = 0;
   while (i < lines.length) {
     const line = lines[i] ?? "";
-    const trimmed = line.trim();
+    const trimmed = line.trim().replace(/^\uFEFF/, "");
 
     if (trimmed.startsWith("```")) {
       i++;
@@ -128,14 +128,18 @@ function renderMarkdown(content: string) {
     const imageMatch = trimmed.match(/^!\[([^\]]*)\]\(([^)\s]+)\)/);
     if (imageMatch) {
       const [, alt, src] = imageMatch;
+      const isLocal = src.startsWith("/");
       out.push(
         <figure key={key()} className="my-8">
-          {/* eslint-disable-next-line @next/next/no-img-element -- blog markdown uses public/ paths */}
+          {/* eslint-disable-next-line @next/next/no-img-element -- markdown content uses public/ or absolute URLs */}
           <img
             src={src}
             alt={alt || "Diagram"}
-            className="w-full rounded-xl border border-zinc-800 bg-zinc-900"
-            loading="lazy"
+            width={isLocal && src.endsWith(".svg") ? 1000 : undefined}
+            height={isLocal && src.endsWith(".svg") ? 780 : undefined}
+            className="h-auto w-full rounded-xl border border-zinc-800 bg-zinc-900"
+            loading={isLocal ? "eager" : "lazy"}
+            decoding="async"
           />
         </figure>,
       );
@@ -155,7 +159,9 @@ function renderMarkdown(content: string) {
 }
 
 export default async function WritingPostPage({ params }: PageProps) {
-  const { slug } = await params;
+  const resolved = await Promise.resolve(params);
+  const slug = resolved?.slug;
+  if (!slug) notFound();
   const post = getPostBySlug(slug);
   if (!post) notFound();
   const contentWithoutTitle = post.content
@@ -164,7 +170,7 @@ export default async function WritingPostPage({ params }: PageProps) {
     .trim();
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-zinc-100">
+    <div className="min-h-screen bg-zinc-950 text-zinc-100">
       <article className="mx-auto max-w-4xl px-6 py-14 md:px-10 md:py-16">
         <Link
           href="/writing"
@@ -197,6 +203,6 @@ export default async function WritingPostPage({ params }: PageProps) {
 
         <section className="space-y-1">{renderMarkdown(contentWithoutTitle)}</section>
       </article>
-    </main>
+    </div>
   );
 }

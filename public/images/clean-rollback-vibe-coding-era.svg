@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 780" role="img" aria-labelledby="rbTitle rbDesc">
+  <title id="rbTitle">The clean rollback: managing risk in the vibe coding era</title>
+  <desc id="rbDesc">Diagram: broken production scenario and two-phase recovery via GitHub revert, Vercel deploy, and local git sync with cache clear.</desc>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1220"/>
+      <stop offset="100%" style="stop-color:#09090b"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.35"/>
+    </filter>
+    <marker id="arrBlue" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#0052CC"/>
+    </marker>
+    <marker id="arrGray" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#52525b"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="780" fill="url(#bgGrad)" rx="12"/>
+  <text x="500" y="36" text-anchor="middle" fill="#fafafa" font-family="system-ui,Segoe UI,sans-serif" font-size="15" font-weight="700" letter-spacing="0.06em">THE CLEAN ROLLBACK: MANAGING RISK IN THE VIBE CODING ERA</text>
+  <line x1="80" y1="48" x2="920" y2="48" stroke="#27272a" stroke-width="1"/>
+
+  <text x="500" y="76" text-anchor="middle" fill="#60a5fa" font-family="system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.12em">SECTION 1 &#x2014; THE SCENARIO: BROKEN PRODUCTION</text>
+
+  <rect x="70" y="92" width="160" height="100" rx="8" fill="#18181b" stroke="#3f3f46" filter="url(#shadow)"/>
+  <rect x="78" y="100" width="144" height="18" rx="3" fill="#27272a"/>
+  <circle cx="88" cy="109" r="4" fill="#ef4444"/>
+  <circle cx="100" cy="109" r="4" fill="#eab308"/>
+  <circle cx="112" cy="109" r="4" fill="#22c55e"/>
+  <text x="150" y="113" text-anchor="middle" fill="#a1a1aa" font-family="ui-monospace,monospace" font-size="8">LOCALHOST:3000</text>
+  <text x="150" y="148" text-anchor="middle" fill="#4ade80" font-family="system-ui,sans-serif" font-size="11" font-weight="600">&#x2705; WORKS!</text>
+  <text x="150" y="172" text-anchor="middle" fill="#71717a" font-family="system-ui,sans-serif" font-size="8">local green path</text>
+
+  <path d="M 235 142 L 300 142" stroke="#0052CC" stroke-width="2" fill="none" marker-end="url(#arrBlue)"/>
+  <text x="268" y="132" text-anchor="middle" fill="#93c5fd" font-family="system-ui,sans-serif" font-size="7">Merge &#x2192; Deploy</text>
+
+  <g transform="translate(318,118)">
+    <path fill="#fafafa" d="M0 24L12 0h10l12 24h-8l-2-4H10l-2 4H0zm12-8h8l-4-8-4 8z"/>
+  </g>
+  <text x="332" y="168" text-anchor="middle" fill="#a1a1aa" font-family="system-ui,sans-serif" font-size="8">Vercel</text>
+
+  <path d="M 360 142 L 420 142" stroke="#52525b" stroke-width="1.5" fill="none" marker-end="url(#arrGray)"/>
+
+  <rect x="430" y="92" width="200" height="100" rx="8" fill="#18181b" stroke="#7f1d1d" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="438" y="100" width="184" height="18" rx="3" fill="#27272a"/>
+  <text x="530" y="113" text-anchor="middle" fill="#a1a1aa" font-family="ui-monospace,monospace" font-size="8">PRODUCTION SITE</text>
+  <text x="530" y="148" text-anchor="middle" fill="#f87171" font-family="system-ui,sans-serif" font-size="22" font-weight="800">&#x274C;</text>
+  <text x="530" y="176" text-anchor="middle" fill="#fca5a5" font-family="system-ui,sans-serif" font-size="9" font-weight="600">BUILD FAILED</text>
+
+  <line x1="80" y1="218" x2="920" y2="218" stroke="#27272a" stroke-width="1"/>
+
+  <text x="500" y="246" text-anchor="middle" fill="#4ade80" font-family="system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.12em">SECTION 2 &#x2014; THE WORKFLOW: RECOVERY IN 5 MIN</text>
+  <text x="500" y="268" text-anchor="middle" fill="#71717a" font-family="system-ui,sans-serif" font-size="9" font-style="italic">A clinical deployment rescue</text>
+
+  <rect x="70" y="286" width="420" height="200" rx="10" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="90" y="310" fill="#93c5fd" font-family="system-ui,sans-serif" font-size="10" font-weight="700">1 &#x2014; PHASE 1: CLOUD RESTORE (GitHub &amp; Vercel)</text>
+  <rect x="90" y="324" width="160" height="88" rx="6" fill="#18181b" stroke="#3f3f46"/>
+  <text x="170" y="348" text-anchor="middle" fill="#a1a1aa" font-family="system-ui,sans-serif" font-size="7">Pull Request (merged)</text>
+  <rect x="120" y="358" width="100" height="22" rx="4" fill="#166534"/>
+  <text x="170" y="373" text-anchor="middle" fill="#fafafa" font-family="system-ui,sans-serif" font-size="9" font-weight="700">REVERT</text>
+  <path d="M 258 366 L 318 366" stroke="#0052CC" stroke-width="2" marker-end="url(#arrBlue)"/>
+  <text x="288" y="358" text-anchor="middle" fill="#93c5fd" font-family="system-ui,sans-serif" font-size="7">auto-deploy</text>
+  <g transform="translate(330,348)">
+    <path fill="#fafafa" d="M0 16L8 0h6l8 16h-5l-1-2H6l-1 2H0zm8-5h4l-2-5-2 5z"/>
+  </g>
+  <text x="344" y="388" text-anchor="middle" fill="#4ade80" font-family="system-ui,sans-serif" font-size="8">&#x2705; deploy OK</text>
+  <rect x="380" y="324" width="90" height="70" rx="6" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+  <text x="425" y="352" text-anchor="middle" fill="#bbf7d0" font-family="system-ui,sans-serif" font-size="8" font-weight="600">LIVE SITE</text>
+  <text x="425" y="372" text-anchor="middle" fill="#86efac" font-family="system-ui,sans-serif" font-size="7">HEALED</text>
+
+  <rect x="510" y="286" width="420" height="200" rx="10" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="530" y="310" fill="#a78bfa" font-family="system-ui,sans-serif" font-size="10" font-weight="700">2 &#x2014; PHASE 2: LOCAL SYNC (Cursor)</text>
+  <rect x="530" y="324" width="380" height="148" rx="6" fill="#09090b" stroke="#3f3f46"/>
+  <text x="545" y="346" fill="#71717a" font-family="ui-monospace,monospace" font-size="8">$ git fetch --all</text>
+  <text x="545" y="364" fill="#71717a" font-family="ui-monospace,monospace" font-size="8">$ git checkout main</text>
+  <text x="545" y="382" fill="#e4e4e7" font-family="ui-monospace,monospace" font-size="8">$ git reset --hard origin/main</text>
+  <text x="545" y="404" fill="#71717a" font-family="system-ui,sans-serif" font-size="7">then: rm -rf .next &#x2192; hard refresh browser</text>
+  <rect x="530" y="418" width="180" height="44" rx="6" fill="#18181b" stroke="#52525b"/>
+  <text x="620" y="438" text-anchor="middle" fill="#a1a1aa" font-family="ui-monospace,monospace" font-size="8">LOCALHOST:3000</text>
+  <text x="620" y="456" text-anchor="middle" fill="#4ade80" font-family="system-ui,sans-serif" font-size="8" font-weight="600">BACK TO STABLE</text>
+
+  <line x1="80" y1="510" x2="920" y2="510" stroke="#27272a" stroke-width="1"/>
+  <text x="500" y="540" text-anchor="middle" fill="#71717a" font-family="system-ui,sans-serif" font-size="9">Workflow &gt; glitch &#x2022; Environment parity &#x2022; Git as undo at scale</text>
+  <text x="500" y="562" text-anchor="middle" fill="#52525b" font-family="system-ui,sans-serif" font-size="8">Blues &#x2022; Vercel &#x2022; GitHub &#x2022; Cursor terminal</text>
+</svg>
