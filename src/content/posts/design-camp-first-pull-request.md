@@ -1,45 +1,48 @@
 ---
-title: "Two Days Ago I'd Never Raised a Pull Request. Today I Shipped One."
+title: "Sydney Design Camp 2026: My 1st Pull Request using Rovo Dev, Bitbucket & Git"
 date: "2026-05-21"
-excerpt: "Attending Atlassian's Design Camp in Sydney crystallised something: the AI-native quotient is accelerating — and it's not just for engineers anymore."
+excerpt: "The design-to-code gap just collapsed. Two days at Sydney Design Camp made one thing clear: the AI-native quotient at Atlassian is accelerating fast."
 author: "Muthukumar Rajamani"
 status: "Published"
 tags:
-  - content-design
+  - design
   - ai-design
   - atlassian
+  - bitbucket
+  - rovo-dev
   - prototyping
   - vibe-coding
   - design-engineering
+  - ai-native
 ---
 
-# Two Days Ago I'd Never Raised a Pull Request. Today I Shipped One.
+# Sydney Design Camp 2026: My 1st Pull Request using Rovo Dev, Bitbucket & Git
 
-Two days ago, I'd never raised a pull request. Today, I shipped one. 🚀
+The design-to-code gap just collapsed. 🚀
 
-This week I attended an in-person Design Camp at Atlassian's Sydney studio, and it crystallised something I've been feeling: the AI-native quotient at this company is accelerating fast — and it's not just for engineers anymore.
+Two days at Sydney Design Camp 2026 made one thing clear: the AI-native quotient at Atlassian is accelerating fast, and it's reshaping what every designer can do.
 
-## Day 1 — Learn the tools
+## Day 1 — Getting hands on the tools
 
-- VS Code as a design prototyping environment
-- AI coding agents to generate working prototypes from prompts
-- Git & Bitbucket for version control, branching, and pull requests
-- Build pipelines to validate prototypes
+- VS Code as a prototyping environment
+- Rovo Dev and AI agents turning prompts into working prototypes
+- Git & Bitbucket for branches, commits, and pull requests
+- Build pipelines validating every change
 
-## Day 2 — Build as a team
+## Day 2 — Building as a team
 
-- Setting up permanent team branches in Bitbucket for ongoing prototype work
-- Building full-fidelity prototypes that mirror production
-- Wiring up live AI capabilities into working UIs
-- A round-robin expo to see how other teams approach prototyping
+- Permanent team branches in Bitbucket for ongoing prototype work
+- Full-fidelity prototypes powered by the Atlassian Design System
+- Live AI capabilities wired into real UIs
+- A round-robin expo to see how other teams ship
 
-## What I learned
+## What I'm taking away
 
-Debugging a build pipeline and raising a PR in Bitbucket — as a content designer. That was the moment it clicked. Tools that felt like "engineer territory" are now part of the design workflow.
+Debugging a build pipeline. Opening a PR in Bitbucket. Watching my own code merge. As a designer, none of this used to be on my desk. Today, it's the desk.
 
-The AI-native quotient isn't about replacing craft. It's about amplifying it. The conversation with engineering changes from "can you build this?" to "here's what I've already validated — here's the PR."
+The shift isn't about designers becoming engineers. It's about the loop between idea → prototype → validated experience collapsing into hours instead of weeks. The conversation with engineering changes from "can you build this?" to "here's what I've already validated — here's the PR."
 
-Every designer is becoming a builder. The gap between concept and code has never been smaller.
+One PR down. The gap between concept and code has never been smaller.
 
 ![Sydney Opera House illuminated at night](/images/design-camp-sydney-opera-house.jpg)
 

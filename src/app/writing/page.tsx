@@ -10,7 +10,7 @@ export default function WritingPage() {
         <header className="mb-8">
           <p className="text-xs uppercase tracking-[0.16em] text-zinc-500">Writing</p>
           <h1 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-50 md:text-4xl">
-            Notes from the Technical Laboratory
+            Notes from the Design Tech OS Lab
           </h1>
         </header>
 
